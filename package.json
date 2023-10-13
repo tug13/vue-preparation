@@ -5,20 +5,48 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "db:serve": "json-server --watch db.json --port=3001"
   },
   "dependencies": {
+    "3": "^2.1.0",
+    "-": "^0.0.1",
+    "@babel/polyfill": "^7.11.5",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "@kolirt/vue-modal": "^0.0.13",
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10",
+    "axios": "^1.5.1",
+    "bootstrap": "^4.6.2",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "flowbite": "^1.8.1",
+    "flowbite-vue": "^0.0.17-next.13",
+    "jquery": "1.9.1",
+    "mutationobserver-shim": "^0.3.7",
+    "popper.js": "^1.16.1",
+    "portal-vue": "^2.1.7",
+    "postcss": "^8",
+    "stylus": "^0.60.0",
+    "stylus-loader": "3",
+    "tailwindcss": "^3",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vue-toast-notification": "^3.0",
+    "vue-toastification": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "json-server": "^0.17.4",
+    "vue-cli-plugin-tailwind": "~3.0.0"
   },
   "eslintConfig": {
     "root": true,

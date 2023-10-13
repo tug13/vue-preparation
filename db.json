@@ -1,0 +1,36 @@
+{
+  "profile": {
+    "email": "test@mail.com",
+    "password": "test@mail.com"
+  },
+  "produits": [
+    {
+      "nom": "test numero ",
+      "nombre": 10,
+      "prix": 12,
+      "id": 12,
+      "total": 120
+    },
+    {
+      "nom": "tet",
+      "nombre": 99,
+      "prix": 33,
+      "id": 14,
+      "total": 3267
+    },
+    {
+      "nom": "test numero 3",
+      "nombre": 55,
+      "prix": 442,
+      "id": 17,
+      "total": 24310
+    },
+    {
+      "nom": "test numero final",
+      "nombre": 800,
+      "prix": 69500,
+      "id": 18,
+      "total": 55600000
+    }
+  ]
+}

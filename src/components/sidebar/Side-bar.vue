@@ -1,32 +1,29 @@
 <script setup>
-import { ref,toRefs,defineProps } from 'vue';
+import { ref, toRefs, defineProps } from "vue";
 const props = defineProps({
-  activeClass: String
+  activeClass: String,
 });
 
 const { activeClass } = toRefs(props);
 let classActive = ref({
-  dashboard:"",
-  produits:"",
-  matrice:""
-})
+  dashboard: "",
+  produits: "",
+  matrice: "",
+});
 switch (activeClass.value) {
   case "dashboard":
     classActive.value.dashboard = "activeClass";
     break;
   case "produits":
     classActive.value.produits = "activeClass";
-    break
+    break;
   // …
   case "matrice":
     classActive.value.matrice = "activeClass";
-    break
+    break;
   default:
     classActive.value.dashboard = "activeClass";
 }
-
-
-
 </script>
 
 <template>
@@ -37,28 +34,21 @@ switch (activeClass.value) {
     </header>
     <ul class="ulnav">
       <router-link class="router-link" to="dashboard">
-      <li :class="classActive.dashboard">
-          Dashboard
-      </li>
-  </router-link>
-  <router-link to="produits">
-    <li :class="classActive.produits">
-          Produits
-    </li>
-  </router-link>
-  <router-link to="matrice">
-    <li :class="classActive.matrice">
-          Matrix
-    </li>
-  </router-link>
+        <li :class="classActive.dashboard">Dashboard</li>
+      </router-link>
+      <router-link to="produits">
+        <li :class="classActive.produits">Produits</li>
+      </router-link>
+      <router-link to="matrice">
+        <li :class="classActive.matrice">Matrix</li>
+      </router-link>
     </ul>
   </div>
   <!-- Content -->
-  
 </template>
 
 <style scoped>
-.activeClass{
+.activeClass {
   background-color: red !important;
   text-decoration: none;
 }
@@ -73,10 +63,6 @@ body {
 }
 
 /* Toggle Styles */
-
-
-
-
 
 /* Sidebar Styles */
 
@@ -116,7 +102,7 @@ body {
   border-bottom: 1px solid #455a64;
   color: #cfd8dc;
   font-size: 14px;
-  padding: 16px 24px;;
+  padding: 16px 24px;
   cursor: pointer;
 }
 
@@ -128,5 +114,4 @@ body {
 #sidebar .ulnav i {
   margin-right: 16px;
 }
-
 </style>

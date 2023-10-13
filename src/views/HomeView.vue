@@ -1,20 +1,18 @@
 <script setup>
-import Nav from '../components/navbar/Nav-bar.vue';
-import Sidebar from '../components/sidebar/Side-bar.vue'
+import Nav from "../components/navbar/Nav-bar.vue";
+import Sidebar from "../components/sidebar/Side-bar.vue";
 </script>
 
 <template>
-  
-  <Nav/>
+  <Nav />
   <div id="viewport">
-    <Sidebar/>
+    <Sidebar />
     <div id="content">
-    <div class="container-fluid">
-      <h1>Welcome !</h1>
+      <div class="container-fluid">
+        <h1>Welcome !</h1>
+      </div>
     </div>
   </div>
-  </div>
-  
 </template>
 
 <style scoped>

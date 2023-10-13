@@ -1,41 +1,40 @@
 <script setup>
-import { defineEmits, defineProps,ref, toRefs,watch} from "vue";
-let emit = defineEmits(["close","produit"]);
+import { defineEmits, defineProps, ref, toRefs, watch } from "vue";
+let emit = defineEmits(["close", "produit"]);
 const props = defineProps({
   isModalOpen: Boolean,
   titleModal: String,
-  rowtable: Object
+  rowtable: Object,
 });
 const { titleModal, rowtable } = toRefs(props);
 let produit = ref({
-  nombre:Number(),
-  nom:String(),
-  prix:Number()
-})
-watch(props, ()=>{
-  produit.value = rowtable.value
-})
+  nombre: Number(),
+  nom: String(),
+  prix: Number(),
+});
+watch(props, () => {
+  produit.value = rowtable.value;
+});
 
-const inputnom = ref(null)
-const inputnombre = ref(null)
-const inputprix = ref(null)
+const inputnom = ref(null);
+const inputnombre = ref(null);
+const inputprix = ref(null);
 
 const submitForm = async () => {
   let value = produit.value;
 
-  if(value.nom && value.nombre && value.prix){
-    emit('produit',produit.value)
+  if (value.nom && value.nombre && value.prix) {
+    emit("produit", produit.value);
   }
-  if(!value.nom){
-    inputnom.value.focus()
+  if (!value.nom) {
+    inputnom.value.focus();
   }
-  if(!value.nombre){
-    inputnombre.value.focus()
+  if (!value.nombre) {
+    inputnombre.value.focus();
   }
-  if(!value.prix){
-    inputprix.value.focus()
+  if (!value.prix) {
+    inputprix.value.focus();
   }
-  
 };
 </script>
 
@@ -51,20 +50,37 @@ const submitForm = async () => {
           <form :class="$style.form">
             <div :class="$style.formRow">
               <label for="nom">Nom</label>
-              <input ref="inputnom" v-model="produit.nom" placeholder="nom" type="text" name="nom" id="nom" required/> 
+              <input
+                ref="inputnom"
+                v-model="produit.nom"
+                placeholder="nom"
+                type="text"
+                name="nom"
+                id="nom"
+                required />
             </div>
             <div :class="$style.formRow">
               <label for="nombre">Nombre</label>
-              <input ref="inputnombre" v-model="produit.nombre" type="number" name="nombre" id="nombre" />
+              <input
+                ref="inputnombre"
+                v-model="produit.nombre"
+                type="number"
+                name="nombre"
+                id="nombre" />
             </div>
             <div :class="$style.formRow">
               <label for="prix">Prix</label>
-              <input ref="inputprix" v-model="produit.prix" type="number" name="prix" id="prix" />
+              <input
+                ref="inputprix"
+                v-model="produit.prix"
+                type="number"
+                name="prix"
+                id="prix" />
             </div>
 
             <div :class="$style.formActions">
               <button @click.prevent="$emit('close')">Annuler</button>
-              <button @click.prevent="submitForm();">Enregistrer</button>
+              <button @click.prevent="submitForm()">Enregistrer</button>
             </div>
           </form>
         </main>
